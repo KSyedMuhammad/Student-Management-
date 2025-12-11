@@ -32,11 +32,12 @@ public class StudentService {
 	}
 	
 	
-	public void updateStudent(int id, String name, int age, String course) {
+	public void updateStudent(int id, String name, int age,String gender, String course) {
 		Student s = getStudentById(id);
 		if (s != null) {
 			s.setName(name);
 			s.setAge(age);
+			s.setGender(gender);
 			s.setCourse(course);
 			System.out.println("Student Update Successfully");
 		} else {

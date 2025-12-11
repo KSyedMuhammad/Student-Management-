@@ -37,10 +37,13 @@ public class App {
 				int age = sc.nextInt();
 				sc.nextLine();
 				
+				System.out.print("Enter Student Gender: ");
+				String gender = sc.nextLine();
+				
 				System.out.print("Enter Student Course: ");
 				String course = sc.nextLine();
 				
-				service.addStudent(new Student(id, name, age, course));
+				service.addStudent(new Student(id, name, age,gender,course));
 				break;
 				
 			case 2: 
@@ -66,11 +69,14 @@ public class App {
                 System.out.print("Enter New Student Age: ");
                 int newAge = sc.nextInt();
                 sc.nextLine();
+                
+                System.out.print("Enter Student Gender: ");
+                String newGender = sc.nextLine();
 
                 System.out.print("Enter New Student Course: ");
                 String newCourse = sc.nextLine();
                 
-                service.updateStudent(uid, newName, newAge, newCourse);
+                service.updateStudent(uid, newName, newAge,newGender, newCourse);
                 break;
                 
 			case 5:
