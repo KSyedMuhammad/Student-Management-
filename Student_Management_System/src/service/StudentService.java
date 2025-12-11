@@ -18,17 +18,9 @@ public class StudentService {
 			System.out.println("No students found.");
 			return;
 		}
-		System.out.println("--------------------------------------------------------------");
-	    System.out.printf("| %-4s | %-15s | %-3s | %-20s |\n", "ID", "Name", "Age", "Course");
-	    System.out.println("--------------------------------------------------------------");
-	    for (Student s : students) {
-	        System.out.printf("| %-4d | %-15s | %-3d | %-20s |\n",
-	                s.getID(),
-	                s.getName(),
-	                s.getAge(),
-	                s.getCourse()
-	        );
-	    }System.out.println("--------------------------------------------------------------");
+		for (Student s : students) {
+			System.out.println(s);
+		}
 	}
 	
 	
@@ -42,10 +34,10 @@ public class StudentService {
 	
 	public void updateStudent(int id, String name, int age, String course) {
 		Student s = getStudentById(id);
-		if (s!= null) {
-			s.getName();
-			s.getAge();
-			s.getCourse();
+		if (s != null) {
+			s.setName(name);
+			s.setAge(age);
+			s.setCourse(course);
 			System.out.println("Student Update Successfully");
 		} else {
 			System.out.println("Student Not Found!");

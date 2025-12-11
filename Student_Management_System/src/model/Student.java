@@ -35,13 +35,10 @@ public class Student {
 	public void setCourse(String course) {
 		this.course = course;
 	}
-	@Override
+    @Override
 	public String toString() {
-	    return  "ID: " + id + "\n" +
-	            "Name: " + name + "\n" +
-	            "Age: " + age + "\n" +
-	            "Course: " + course + "\n" +
-	            "----------------------------";
-	}
+        return "ID: " +id + "| Name: "+name +" |Age:" +age +" |Course: " +course;
+        
 
+    }
 }
