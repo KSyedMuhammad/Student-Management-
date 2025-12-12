@@ -3,12 +3,39 @@ package main;
 import java.util.Scanner;
 import model.Student;
 import service.StudentService;
+import service.LoginService;
+
 
 public class App {
      
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
+		LoginService login = new LoginService();
 		StudentService service = new StudentService(); 
+		
+		System.out.println("=============================================================================");
+		System.out.println("                    Zilla Parishad High School                               ");
+		System.out.println("                    (Affiliated to CBSE Board)                               ");
+		System.out.println("-----------------------------------------------------------------------------");
+		System.out.println(" Address : Rajiv Colony, Shadi Mahal Oposit,Gorantla - 515231, Andrah Pradesh");
+		System.out.println(" Contact : +91 9878586848");
+		System.out.println(" Email   : info@xyzschool.com");
+		System.out.println(" Motto   : \"Empowering Students for the Future\"");
+		System.out.println("===========================================================================\n");
+
+		System.out.println("                        LOGIN PORTAL                                          ");
+		System.out.println("===========================================================================\n");
+		System.out.println("Enter Username: ");
+		String user = sc.nextLine();
+		
+		System.out.println("Enter Password: ");
+		String pass = sc.nextLine();
+		
+		if (!login.login(user,pass)) {
+			System.out.println("Invalid Credentials! Access Denied.");
+			System.exit(0);
+		}
+		System.out.println("Login Successful!\n");
 		
 		while(true) {
 			System.out.println("\n ==== Student Management System ====");
