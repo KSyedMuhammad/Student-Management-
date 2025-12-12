@@ -3,38 +3,45 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Student;
 
-public class StudentService {
 
+//This class handles all business logic for student operations
+public class StudentService {
+    
+	// List to store student objects (acts as a database)
 	private List<Student> students = new ArrayList<>();
 	
+	// Add new student to the list
 	public void addStudent(Student s) {
 		
 		students.add(s);
 		System.out.println("Student Added Successfully!");
 	}
 	
+    // Display all students in table format
 	public void viewAllStudents() {
 		if(students.isEmpty()) {
 			System.out.println("No students found.");
-			return;
+			return; 
 		}
 		for (Student s : students) {
 			System.out.println(s);
 		}
 	}
 	
-	
+    // Search and return a student using ID
 	public Student getStudentById(int id) {
 		for (Student s : students) {
-			if (s.getID() == id ) return s;
+			if (s.getID() == id ) return s; //Student found
 		}
-		return null;
+		return null; //Not found
 	}
 	
 	
+	// Update student details using ID
 	public void updateStudent(int id, String name, int age,String gender, String course) {
 		Student s = getStudentById(id);
 		if (s != null) {
+			// Update fields
 			s.setName(name);
 			s.setAge(age);
 			s.setGender(gender);
@@ -46,6 +53,8 @@ public class StudentService {
 	}
 	
 	
+	
+	// Delete student from the list by ID
 	public void deleteStudent(int id) {
 		Student s = getStudentById(id);
 		if(s!= null) {
